@@ -5,68 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connect with Me</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
         body {
-            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #0f0f0f, #1c1c1c); /* Dark gradient */
+            height: 100vh;
+            background: linear-gradient(135deg, #0f0f0f, #3a0f40);
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
         }
-
         .container {
-            background: rgba(255, 255, 255, 0.1); /* Glass effect */
-            backdrop-filter: blur(10px); /* Blurry transparency */
-            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(15px);
             border-radius: 15px;
+            padding: 30px;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            width: 350px;
+            width: 320px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
-
         .logo {
-            width: 100px;
-            margin-bottom: 20px;
+            width: 80px;
+            margin-bottom: 10px;
         }
-
         h2 {
-            color: #fff;
+            color: white;
             margin-bottom: 20px;
         }
-
-        .btn {
+        .button {
             display: block;
             width: 100%;
             padding: 12px;
             margin: 10px 0;
-            text-decoration: none;
+            border: 2px solid white;
+            background: white;
+            color: black;
             font-size: 16px;
             font-weight: bold;
             text-align: center;
+            cursor: pointer;
             border-radius: 8px;
-            border: 2px solid black;
-            color: black;
-            background-color: white;
             transition: 0.3s;
+            text-decoration: none;
         }
-
-        .btn:hover {
-            background-color: #f0f0f0;
+        .button:hover {
+            background: rgba(255, 255, 255, 0.8);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="sa-logo-black.png" alt="Logo" class="logo">
+        <img src="logo.png" alt="Logo" class="logo">
         <h2>Connect with Me</h2>
-        <a href="https://api.whatsapp.com/send?phone=9874749666&text=Hi!%20I'm%20interested%20in%20your%20courses." class="btn">Chat on WhatsApp</a>
-        <a href="https://drive.google.com/drive/folders/1ab05Wuf_R12L1sa1BCO6nCIH-A7Ypb9R" class="btn">View Portfolio</a>
+        <a href="#" class="button">Chat on WhatsApp</a>
+        <a href="#" class="button">View Portfolio</a>
     </div>
 </body>
 </html>
