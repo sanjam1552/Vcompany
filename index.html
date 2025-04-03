@@ -14,7 +14,8 @@
             margin: 0;
             font-family: Arial, sans-serif;
             position: relative;
-            overflow: hidden;
+            overflow-y: auto; /* Change from hidden to auto */
+    -webkit-overflow-scrolling: touch; /* Enables smooth scrolling on iOS */
         }
         .background-orbs {
             position: absolute;
