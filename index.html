@@ -35,7 +35,14 @@
         }
         .orb1 { top: 10%; left: 20%; animation-delay: 0s; }
         .orb2 { bottom: 20%; right: 15%; animation-delay: 2s; }
-        .orb3 { top: 45%; left: 50%; transform: translate(-50%, -50%); animation-delay: 4s; }
+        .orb3 {
+    top: 45%;
+    left: 50%;
+    margin-left: -75px;  /* Half of the orb's width */
+    margin-top: -75px;   /* Half of the orb's height */
+    animation-delay: 4s;
+}
+
         
         @keyframes float {
             0% { transform: translateY(0px) translateX(0px); }
