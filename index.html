@@ -27,12 +27,12 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient(135deg, #0a0a0a, #91013d);
+            background: linear-gradient(135deg, #fff6b7, #f6416c); /* yellowish gradient */
             margin: 0;
             font-family: Arial, sans-serif;
             position: relative;
-            overflow-y: auto; /* Change from hidden to auto */
-            -webkit-overflow-scrolling: touch; /* Enables smooth scrolling on iOS */
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
         }
         .background-orbs {
             position: absolute;
@@ -45,8 +45,8 @@
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(255, 0, 150, 0.6), transparent);
-            box-shadow: 0 0 20px rgba(255, 0, 150, 0.8);
+            background: radial-gradient(circle, rgba(255, 200, 0, 0.6), transparent); /* yellow tone */
+            box-shadow: 0 0 20px rgba(255, 200, 0, 0.8);
             animation: float 8s infinite alternate ease-in-out;
             filter: blur(15px);
         }
@@ -55,8 +55,8 @@
         .orb3 {
             top: 45%;
             left: 50%;
-            margin-left: -75px;  /* Half of the orb's width */
-            margin-top: -75px;   /* Half of the orb's height */
+            margin-left: -75px;
+            margin-top: -75px;
             animation-delay: 4s;
         }
 
@@ -77,11 +77,11 @@
             padding: 20px;
             text-align: center;
             width: 250px;
-            position: relative; /* Add this */
-            top: -5vh; /* Moves everything up */
+            position: relative;
+            top: -5vh;
         }
         .logo {
-            width: 120px; /* Increased size */
+            width: 120px;
             margin-bottom: 10px;
         }
         h2 {
@@ -122,7 +122,7 @@
         <img src="v company logo transparant.png" alt="Logo" class="logo">
         <h2>Connect with Us</h2>
         <a href="https://wa.me/9874749666?text=Hi%20there!%20I'm%20interested%20in%20your%20courses." class="button" target="_blank">Chat on WhatsApp</a>
-        <a href="https://www.youtube.com/watch?v=HJEgu07Aoww">View Onam Club Video</a>
+        <a href="https://www.youtube.com/watch?v=HJEgu07Aoww" class="button" target="_blank">View Onam Club Video</a>
     </div>
 </body>
 </html>
