@@ -4,887 +4,162 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RVNL Mirror — January–March 2026 | Issue 22</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
-  :root {
-    --navy: #0a1628;
-    --deep-blue: #0d2444;
-    --mid-blue: #1a3a6b;
-    --steel: #1e5fa8;
-    --accent: #c8102e;
-    --accent2: #e8b800;
-    --light-blue: #4a8fd4;
-    --pale: #d6e4f5;
-    --white: #ffffff;
-    --off-white: #f0f4fb;
-    --text-light: #b8cde8;
-    --grid-line: rgba(74,143,212,0.15);
-  }
+:root {
+  --navy: #0a1628;
+  --deep-blue: #0d2444;
+  --mid-blue: #1a3a6b;
+  --steel: #1e5fa8;
+  --accent: #c8102e;
+  --accent2: #e8b800;
+  --light-blue: #4a8fd4;
+  --pale: #d6e4f5;
+  --white: #ffffff;
+  --off-white: #f0f4fb;
+  --text-light: #b8cde8;
+  --grid-line: rgba(74,143,212,0.15);
+}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-  body {
-    font-family: 'Barlow', sans-serif;
-    background: var(--navy);
-    color: var(--white);
-    overflow-x: hidden;
-  }
+body {
+  font-family: 'Barlow', sans-serif;
+  background: var(--navy);
+  color: var(--white);
+}
 
-  /* ── HEADER ── */
-  .site-header {
-    position: relative;
-    background: var(--deep-blue);
-    overflow: hidden;
-    padding: 0;
-  }
+/* HEADER */
+.site-header {
+  position: relative;
+  background: var(--deep-blue);
+  overflow: hidden;
+}
 
-  .header-grid-bg {
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(var(--grid-line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-    background-size: 48px 48px;
-    opacity: 0.6;
-  }
+.header-grid-bg {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.6;
+}
 
-  .header-diagonal {
-    position: absolute;
-    bottom: -1px; right: 0;
-    width: 55%;
-    height: 100%;
-    background: var(--steel);
-    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
-    opacity: 0.18;
-  }
+.header-diagonal {
+  position: absolute;
+  bottom: -1px; right: 0;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--steel), transparent);
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+  opacity: 0.22;
+}
 
-  .header-inner {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 340px;
-    align-items: center;
-  }
+.header-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 380px;
+  align-items: center;
+}
 
-  .header-left {
-    padding: 48px 48px 48px 60px;
-  }
+.header-left {
+  padding: 70px 60px;
+  max-width: 780px;
+}
 
-  .logo-mark {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 28px;
-  }
+.logo-mark {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
 
-  .logo-slashes {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 2.4rem;
-    font-weight: 800;
-    color: var(--accent);
-    letter-spacing: -2px;
-    line-height: 1;
-  }
+.logo-slashes {
+  font-family: 'Barlow Condensed';
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--accent);
+}
 
-  .logo-text {
-    border-left: 3px solid var(--steel);
-    padding-left: 14px;
-  }
+.logo-text {
+  border-left: 3px solid var(--steel);
+  padding-left: 14px;
+}
 
-  .logo-text .org-name {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 2.6rem;
-    font-weight: 800;
-    letter-spacing: 4px;
-    color: var(--white);
-    line-height: 1;
-    text-transform: uppercase;
-  }
+.org-name {
+  font-family: 'Barlow Condensed';
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
 
-  .logo-text .pub-name {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: var(--light-blue);
-    letter-spacing: 8px;
-    text-transform: uppercase;
-  }
+.pub-name {
+  font-size: 1.1rem;
+  color: var(--light-blue);
+  letter-spacing: 8px;
+}
 
-  .issue-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: var(--accent);
-    padding: 6px 18px;
-    margin-bottom: 22px;
-  }
+/* BADGE */
+.issue-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(90deg, var(--accent), #a50d24);
+  padding: 8px 20px;
+  margin-bottom: 26px;
+  box-shadow: 0 4px 14px rgba(200,16,46,0.3);
+}
 
-  .issue-badge span {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--white);
-  }
+.issue-badge span {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
 
-  .issue-badge .sep { width: 1px; height: 16px; background: rgba(255,255,255,0.5); }
+/* HEADLINE */
+.header-headline {
+  font-family: 'Barlow Condensed';
+  font-size: 4.2rem;
+  font-weight: 800;
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin-top: 10px;
+  animation: fadeUp 0.8s ease forwards;
+}
 
-  .header-headline {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 3.8rem;
-    font-weight: 800;
-    line-height: 0.95;
-    text-transform: uppercase;
-    color: var(--white);
-    letter-spacing: 1px;
-  }
+.header-headline .highlight {
+  color: var(--accent2);
+  display: block;
+  text-shadow: 0 0 20px rgba(232,184,0,0.25);
+}
 
-  .header-headline .highlight { color: var(--accent2); display: block; }
-
-  .header-right {
-    padding: 48px 60px 48px 32px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
-  }
-
-  .cmd-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(74,143,212,0.25);
-    border-left: 4px solid var(--steel);
-    padding: 20px 24px;
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-  }
-
-  .cmd-photo-wrap {
-    width: 70px;
-    height: 70px;
-    border: 2px solid var(--steel);
-    flex-shrink: 0;
-    overflow: hidden;
-    background: var(--mid-blue);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.55rem;
-    color: var(--light-blue);
-    text-align: center;
-    padding: 4px;
-  }
-
-  .cmd-details { flex: 1; }
-  .cmd-role {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--light-blue);
-    margin-bottom: 4px;
-  }
-  .cmd-name {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--white);
-    line-height: 1.1;
-    margin-bottom: 6px;
-  }
-  .cmd-excerpt {
-    font-size: 0.78rem;
-    line-height: 1.5;
-    color: var(--text-light);
-  }
-
-  /* ── TICKER ── */
-  .ticker-bar {
-    background: var(--accent);
-    height: 44px;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-  }
-  .ticker-label {
-    background: var(--navy);
-    height: 100%;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    white-space: nowrap;
-    flex-shrink: 0;
-    z-index: 2;
-  }
-  .ticker-track {
-    display: flex;
-    animation: ticker 38s linear infinite;
-    white-space: nowrap;
-  }
-  .ticker-item {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--white);
-    padding: 0 32px;
-  }
-  .ticker-dot { color: rgba(255,255,255,0.5); }
-  @keyframes ticker {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
-  /* ── LAYOUT WRAPPER ── */
-  .page-body {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 40px;
-  }
-
-  /* ── SECTION HEADERS ── */
-  .section-header {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin: 60px 0 28px;
-  }
-  .section-slash {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: var(--accent);
-    letter-spacing: -1px;
-  }
-  .section-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 800;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: var(--white);
-  }
-  .section-line {
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(90deg, var(--steel) 0%, transparent 100%);
-  }
-
-  /* ── CMD LETTER ── */
-  .cmd-letter-section {
-    padding: 52px 0;
-    border-top: 1px solid var(--grid-line);
-    border-bottom: 1px solid var(--grid-line);
-  }
-  .cmd-letter-grid {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 48px;
-    align-items: start;
-  }
-  .cmd-profile-card {
-    background: var(--deep-blue);
-    border: 1px solid rgba(74,143,212,0.2);
-    border-top: 4px solid var(--accent);
-    padding: 28px;
-    text-align: center;
-  }
-  .cmd-avatar {
-    width: 130px;
-    height: 130px;
-    border: 3px solid var(--steel);
-    margin: 0 auto 16px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--mid-blue);
-    color: var(--light-blue);
-    font-size: 0.65rem;
-    text-align: center;
-    padding: 8px;
-  }
-  .profile-name {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 6px;
-  }
-  .profile-role {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--light-blue);
-    line-height: 1.4;
-  }
-  .profile-org {
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-top: 4px;
-  }
-  .cmd-letter-body .salutation {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--light-blue);
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-  }
-  .cmd-letter-body p {
-    font-size: 0.9rem;
-    line-height: 1.75;
-    color: var(--pale);
-    margin-bottom: 14px;
-  }
-  .cmd-letter-body p strong { color: var(--white); font-weight: 600; }
-
-  /* ── KEY UPDATES GRID ── */
-  .key-updates-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-bottom: 60px;
-  }
-  .update-card {
-    background: var(--deep-blue);
-    border: 1px solid rgba(74,143,212,0.18);
-    border-left: 3px solid var(--steel);
-    padding: 20px 22px;
-    transition: border-left-color 0.2s, background 0.2s;
-  }
-  .update-card:hover {
-    border-left-color: var(--accent);
-    background: rgba(26,58,107,0.6);
-  }
-  .update-card-tag {
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 8px;
-  }
-  .update-card h3 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--white);
-    line-height: 1.25;
-    margin-bottom: 8px;
-  }
-  .update-card p {
-    font-size: 0.8rem;
-    line-height: 1.6;
-    color: var(--text-light);
-    margin-bottom: 10px;
-  }
-  .read-link {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--light-blue);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: color 0.2s, border-color 0.2s;
-  }
-  .read-link:hover { color: var(--accent2); border-bottom-color: var(--accent2); }
-  .read-link::after { content: ' →'; }
-
-  /* ── TWO COL CONTENT ── */
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 60px; }
-
-  /* ── PARTNERSHIPS ── */
-  .partnership-item {
-    background: var(--deep-blue);
-    border: 1px solid rgba(74,143,212,0.18);
-    padding: 22px;
-    margin-bottom: 14px;
-  }
-  .partnership-item h4 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--accent2);
-    margin-bottom: 6px;
-    line-height: 1.25;
-  }
-  .partnership-item p {
-    font-size: 0.82rem;
-    line-height: 1.6;
-    color: var(--text-light);
-    margin-bottom: 8px;
-  }
-  .mou-image-block {
-    width: 100%;
-    height: 180px;
-    background: var(--mid-blue);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.7rem;
-    color: var(--light-blue);
-    border: 1px solid rgba(74,143,212,0.25);
-    margin: 14px 0;
-  }
-
-  /* ── AWARDS ── */
-  .award-item {
-    background: var(--deep-blue);
-    border: 1px solid rgba(74,143,212,0.18);
-    border-top: 3px solid var(--accent2);
-    padding: 20px 22px;
-    margin-bottom: 14px;
-  }
-  .award-item h4 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 6px;
-    line-height: 1.25;
-  }
-  .award-item p {
-    font-size: 0.82rem;
-    line-height: 1.6;
-    color: var(--text-light);
-    margin-bottom: 8px;
-  }
-  .award-image {
-    width: 100%;
-    height: 160px;
-    background: var(--mid-blue);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.7rem;
-    color: var(--light-blue);
-    border: 1px solid rgba(74,143,212,0.25);
-    margin: 10px 0;
-  }
-
-  /* ── FINANCIALS ── */
-  .financials-strip {
-    background: var(--deep-blue);
-    border: 1px solid rgba(74,143,212,0.2);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    margin-bottom: 60px;
-    overflow: hidden;
-  }
-  .fin-block {
-    padding: 28px 32px;
-    border-right: 1px solid rgba(74,143,212,0.2);
-  }
-  .fin-block:last-child { border-right: none; }
-  .fin-tag {
-    font-size: 0.62rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 10px;
-  }
-  .fin-block h4 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--accent2);
-    margin-bottom: 8px;
-  }
-  .fin-block p {
-    font-size: 0.82rem;
-    line-height: 1.65;
-    color: var(--text-light);
-    margin-bottom: 8px;
-  }
-
-  /* ── MEGA PROJECTS ── */
-  .mega-project {
-    background: var(--deep-blue);
-    border: 1px solid rgba(74,143,212,0.2);
-    margin-bottom: 24px;
-    overflow: hidden;
-  }
-  .mega-project-header {
-    background: var(--mid-blue);
-    padding: 14px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .mega-project-header h3 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.15rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--white);
-  }
-  .mega-project-header .location-tag {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--accent2);
-    background: rgba(232,184,0,0.12);
-    padding: 4px 10px;
-    border: 1px solid rgba(232,184,0,0.3);
-  }
-  .mega-project-body {
-    padding: 20px 24px;
-    display: grid;
-    grid-template-columns: 1fr 340px;
-    gap: 20px;
-    align-items: start;
-  }
-  .mega-project-body p {
-    font-size: 0.85rem;
-    line-height: 1.7;
-    color: var(--pale);
-  }
-  .mega-project-img {
-    width: 100%;
-    height: 200px;
-    background: var(--mid-blue);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.65rem;
-    color: var(--light-blue);
-    border: 1px solid rgba(74,143,212,0.25);
-    overflow: hidden;
-  }
-  .mega-project-img img { width: 100%; height: 100%; object-fit: cover; }
-
-  /* ── TECH & PEOPLE ── */
-  .tech-split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    margin-bottom: 60px;
-  }
-  .info-panel {
-    background: var(--deep-blue);
-    border: 1px solid rgba(74,143,212,0.2);
-    padding: 28px;
-  }
-  .info-panel-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 800;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--white);
-    margin-bottom: 16px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid var(--steel);
-  }
-  .info-panel p {
-    font-size: 0.84rem;
-    line-height: 1.7;
-    color: var(--pale);
-    margin-bottom: 12px;
-  }
-  .img-duo {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-top: 16px;
-  }
-  .img-placeholder {
-    height: 130px;
-    background: var(--mid-blue);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.62rem;
-    color: var(--light-blue);
-    text-align: center;
-    padding: 6px;
-    border: 1px solid rgba(74,143,212,0.25);
-    overflow: hidden;
-  }
-  .img-placeholder img { width: 100%; height: 100%; object-fit: cover; }
-  .walk-in-box {
-    margin-top: 16px;
-    background: rgba(200,16,46,0.1);
-    border: 1px solid rgba(200,16,46,0.35);
-    padding: 16px;
-  }
-  .walk-in-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1rem;
-    font-weight: 800;
-    color: var(--accent);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
-  .walk-in-box p { font-size: 0.78rem; color: var(--text-light); margin: 0; }
-
-  /* ── MEDIA ── */
-  .media-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-    margin-bottom: 60px;
-  }
-  .media-item {
-    background: var(--deep-blue);
-    border: 1px solid rgba(74,143,212,0.18);
-    border-left: 3px solid var(--light-blue);
-    padding: 16px 20px;
-    transition: border-left-color 0.2s;
-  }
-  .media-item:hover { border-left-color: var(--accent2); }
-  .media-item h4 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 6px;
-    line-height: 1.3;
-  }
-  .media-item p {
-    font-size: 0.78rem;
-    line-height: 1.6;
-    color: var(--text-light);
-    margin-bottom: 8px;
-  }
-
-  /* ── SUSTAINABILITY ── */
-  .sustain-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-bottom: 60px;
-  }
-  .sustain-card {
-    background: var(--deep-blue);
-    border: 1px solid rgba(74,143,212,0.18);
-    overflow: hidden;
-  }
-  .sustain-card-img {
-    height: 150px;
-    background: var(--mid-blue);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.62rem;
-    color: var(--light-blue);
-    text-align: center;
-    padding: 6px;
-    overflow: hidden;
-  }
-  .sustain-card-img img { width: 100%; height: 100%; object-fit: cover; }
-  .sustain-card-body { padding: 16px 18px; }
-  .sustain-card-body h4 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--accent2);
-    margin-bottom: 6px;
-    line-height: 1.25;
-  }
-  .sustain-card-body p {
-    font-size: 0.78rem;
-    line-height: 1.6;
-    color: var(--text-light);
-    margin-bottom: 8px;
-  }
-
-  /* ── PIU UPDATES ── */
-  .piu-list { margin-bottom: 60px; }
-  .piu-item {
-    border-bottom: 1px solid var(--grid-line);
-    padding: 20px 0;
-    display: grid;
-    grid-template-columns: 4px 1fr;
-    gap: 20px;
-    align-items: start;
-  }
-  .piu-stripe { background: var(--steel); height: 100%; min-height: 40px; }
-  .piu-item h4 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 6px;
-    line-height: 1.3;
-  }
-  .piu-item p {
-    font-size: 0.82rem;
-    line-height: 1.65;
-    color: var(--text-light);
-    margin-bottom: 8px;
-  }
-
-  /* ── SOCIAL ── */
-  .social-section {
-    background: var(--deep-blue);
-    border: 1px solid rgba(74,143,212,0.2);
-    padding: 40px;
-    margin-bottom: 60px;
-  }
-  .social-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    margin-top: 28px;
-  }
-  .social-row {
-    display: contents;
-  }
-  .social-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  .social-table th {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--light-blue);
-    text-align: left;
-    padding: 10px 16px;
-    background: rgba(26,58,107,0.5);
-    border-bottom: 2px solid var(--steel);
-  }
-  .social-table td {
-    padding: 12px 16px;
-    font-size: 0.82rem;
-    color: var(--pale);
-    border-bottom: 1px solid var(--grid-line);
-    vertical-align: middle;
-  }
-  .social-table td a {
-    color: var(--light-blue);
-    text-decoration: none;
-  }
-  .social-table td a:hover { color: var(--accent2); }
-  .followers-num {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 800;
-    color: var(--accent2);
-  }
-  .social-platform {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--white);
-  }
-
-  /* ── FOOTER ── */
-  .site-footer {
-    background: var(--deep-blue);
-    border-top: 3px solid var(--steel);
-    padding: 40px 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 32px;
-  }
-  .footer-logo {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 2rem;
-    font-weight: 800;
-    letter-spacing: 4px;
-    color: var(--white);
-  }
-  .footer-logo span { color: var(--accent); }
-  .footer-links {
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-  .footer-links a {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--light-blue);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .footer-links a:hover { color: var(--accent2); }
-  .footer-copy {
-    font-size: 0.75rem;
-    color: rgba(184,205,232,0.5);
-    text-align: right;
-  }
-  .footer-copy a { color: rgba(184,205,232,0.5); }
-
-  /* ── MEDIA NEWSPAPER CLIP ── */
-  .newspaper-clips {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-bottom: 32px;
-  }
-  .clip {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(74,143,212,0.2);
-    height: 160px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.65rem;
-    color: var(--light-blue);
-    text-align: center;
-    padding: 8px;
-    overflow: hidden;
-  }
-  .clip img { width: 100%; height: 100%; object-fit: cover; }
-
-  /* image caption placeholder helper */
-  .section-desc {
-    font-size: 0.84rem;
-    line-height: 1.7;
-    color: var(--text-light);
-    margin-bottom: 24px;
-    max-width: 800px;
-  }
-
-  @media (max-width: 900px) {
-    .header-inner { grid-template-columns: 1fr; }
-    .key-updates-grid { grid-template-columns: 1fr 1fr; }
-    .two-col { grid-template-columns: 1fr; }
-    .tech-split { grid-template-columns: 1fr; }
-    .sustain-cards { grid-template-columns: 1fr 1fr; }
-    .newspaper-clips { grid-template-columns: 1fr 1fr; }
-    .mega-project-body { grid-template-columns: 1fr; }
-    .social-table { font-size: 0.75rem; }
-  }
+/* ANIMATION */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 </style>
 </head>
+
 <body>
 
-<!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
 <header class="site-header">
   <div class="header-grid-bg"></div>
   <div class="header-diagonal"></div>
+
   <div class="header-inner">
     <div class="header-left">
+
       <div class="logo-mark">
         <span class="logo-slashes">//</span>
         <div class="logo-text">
@@ -892,569 +167,21 @@
           <div class="pub-name">Mirror</div>
         </div>
       </div>
+
       <div class="issue-badge">
         <span>January – March 2026</span>
-        <span class="sep"></span>
+        <span>|</span>
         <span>Issue 22</span>
       </div>
+
       <h1 class="header-headline">
         Building India's
         <span class="highlight">Rail Future</span>
       </h1>
-    </div>
-    <div class="header-right">
-      <div class="cmd-card">
-        <div class="cmd-photo-wrap">CMD<br>Photo</div>
-        <div class="cmd-details">
-          <div class="cmd-role">Chairman & Managing Director</div>
-          <div class="cmd-name">Shri Saleem Ahmad</div>
-          <div class="cmd-excerpt">Assuming charge at RVNL with a vision to lead the organisation towards new frontiers of excellence, achievement, and sustainable growth.</div>
-        </div>
-      </div>
+
     </div>
   </div>
 </header>
-
-<!-- ═══════════════════════════════ TICKER ═══════════════════════════════ -->
-<div class="ticker-bar">
-  <div class="ticker-label">// LATEST</div>
-  <div class="ticker-track">
-    <span class="ticker-item">RVNL &amp; Texmaco Joint Venture Formalised</span><span class="ticker-dot">◆</span>
-    <span class="ticker-item">Q3 FY26 Net Profit ₹324 Cr — Up 4% YoY</span><span class="ticker-dot">◆</span>
-    <span class="ticker-item">Pamban Bridge Wins Trailblazing Infrastructure Award 2026</span><span class="ticker-dot">◆</span>
-    <span class="ticker-item">RVNL Shifts Corporate Office to World Trade Center</span><span class="ticker-dot">◆</span>
-    <span class="ticker-item">RVNL–GPT JV Emerges L1 for ₹1,201 Cr Varanasi Bridge</span><span class="ticker-dot">◆</span>
-    <span class="ticker-item">Kolkata Purple Line Tunnelling Beneath RCTC Achieved</span><span class="ticker-dot">◆</span>
-    <span class="ticker-item">RVNL &amp; Texmaco Joint Venture Formalised</span><span class="ticker-dot">◆</span>
-    <span class="ticker-item">Q3 FY26 Net Profit ₹324 Cr — Up 4% YoY</span><span class="ticker-dot">◆</span>
-    <span class="ticker-item">Pamban Bridge Wins Trailblazing Infrastructure Award 2026</span><span class="ticker-dot">◆</span>
-    <span class="ticker-item">RVNL Shifts Corporate Office to World Trade Center</span><span class="ticker-dot">◆</span>
-    <span class="ticker-item">RVNL–GPT JV Emerges L1 for ₹1,201 Cr Varanasi Bridge</span><span class="ticker-dot">◆</span>
-    <span class="ticker-item">Kolkata Purple Line Tunnelling Beneath RCTC Achieved</span><span class="ticker-dot">◆</span>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════ BODY ═══════════════════════════════ -->
-<div class="page-body">
-
-  <!-- CMD MESSAGE -->
-  <div class="section-header">
-    <span class="section-slash">//</span>
-    <span class="section-title">Chairman's Message</span>
-    <div class="section-line"></div>
-  </div>
-
-  <div class="cmd-letter-section">
-    <div class="cmd-letter-grid">
-      <div class="cmd-profile-card">
-        <div class="cmd-avatar">CMD Photo</div>
-        <div class="profile-name">Shri Saleem Ahmad</div>
-        <div class="profile-role">Chairman &amp; Managing Director</div>
-        <div class="profile-org">Rail Vikas Nigam Limited</div>
-      </div>
-      <div class="cmd-letter-body">
-        <div class="salutation">Dear Colleagues and Stakeholders,</div>
-        <p>I have assumed charge as the Chairman and Managing Director of Rail Vikas Nigam Limited (RVNL). I take this opportunity to place on record my deep appreciation for the visionary leadership of my distinguished predecessors, whose foresight, dedication, and professionalism have significantly strengthened the foundation of this organisation.</p>
-        <p>As I take on this responsibility, my endeavour is not only to carry forward their rich legacy, but also to lead RVNL towards new frontiers of excellence, achievement, and sustainable growth. Our collective goal is to firmly position <strong>RVNL at the pinnacle of infrastructure development</strong>, both within India and on the global stage.</p>
-        <p>RVNL publishes a quarterly newsletter titled "RVNL Mirror". This publication serves as a valuable platform for the exchange of ideas and for disseminating information on the company's diverse activities, achievements, and innovations among employees and stakeholders. I am happy to present the <strong>January–March 2026 edition</strong> of RVNL Mirror, which encapsulates the progress, milestones, and collective efforts that defined this period.</p>
-        <p>During this period, significant advancements were achieved across our railway and urban infrastructure projects. These include steady progress in the <strong>Vande Bharat Sleeper trainset</strong> manufacturing ecosystem, major tunnelling milestones in the <strong>Rishikesh–Karnaprayag Rail Project</strong>, and sustained momentum in flagship projects such as <strong>Kolkata Metro Line, Pune Metro extension, and Chennai Metro Corridor</strong>.</p>
-        <p>This quarter also witnessed RVNL actively representing India's infrastructure capabilities at key national and international industry platforms, with our participation in <strong>IREE 2025</strong> held from 15–17 October. Director (Operations) showcased RVNL's project innovations, adoption of advanced technologies, and ongoing transformation initiatives. RVNL also participated in the inaugural session of the <strong>Tunnels &amp; Bridges Conference 2025</strong>, organised by FICCI.</p>
-        <p>Looking ahead, RVNL's strategic vision is to consolidate its leadership in domestic infrastructure development while steadily expanding its presence in international markets. These accomplishments and aspirations reflect the dedication, teamwork, and forward-looking spirit of the entire RVNL family.</p>
-        <p style="margin-top:20px; font-style:italic; color: var(--white);">With warm regards,<br><strong>Shri Saleem Ahmad</strong><br>Chairman &amp; Managing Director, Rail Vikas Nigam Limited</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- KEY UPDATES -->
-  <div class="section-header">
-    <span class="section-slash">//</span>
-    <span class="section-title">Key Updates</span>
-    <div class="section-line"></div>
-  </div>
-
-  <div class="key-updates-grid">
-    <div class="update-card">
-      <div class="update-card-tag">Office Move</div>
-      <h3>RVNL Shifts Registered and Corporate Office</h3>
-      <p>Rail Vikas Nigam Limited (RVNL) relocates its registered and corporate office to World Trade Center.</p>
-      <a href="https://www.rvnl.org" class="read-link">Read more</a>
-    </div>
-    <div class="update-card">
-      <div class="update-card-tag">Joint Venture</div>
-      <h3>RVNL and Texmaco Formalise Joint Venture</h3>
-      <p>In a major development, a joint venture to advance India's rail manufacturing landscape has been formalised.</p>
-      <a href="https://www.rvnl.org" class="read-link">Read more</a>
-    </div>
-    <div class="update-card">
-      <div class="update-card-tag">Award</div>
-      <h3>RVNL Wins Trailblazing Infrastructure Award</h3>
-      <p>RVNL awarded at the Build India Infra Awards 2026 for the landmark Pamban Bridge project.</p>
-      <a href="https://www.rvnl.org" class="read-link">Read more</a>
-    </div>
-    <div class="update-card">
-      <div class="update-card-tag">Recognition</div>
-      <h3>RVNL Awarded at PHDCCI Global Rail &amp; Metro Convention</h3>
-      <p>Rail Vikas Nigam Limited (RVNL) was honored at the 12th PHDCCI Global Rail &amp; Metro Convention, held at PHD House, New Delhi.</p>
-      <a href="https://www.rvnl.org" class="read-link">Read more</a>
-    </div>
-    <div class="update-card">
-      <div class="update-card-tag">Bid Win</div>
-      <h3>RVNL–GPT JV Emerges L1 for Rail-Cum-Road Bridge Project in Varanasi</h3>
-      <p>Rail Vikas Nigam Ltd–GPT joint venture has emerged as the lowest bidder for a major infrastructure project awarded by Northern Railway.</p>
-      <a href="https://www.rvnl.org" class="read-link">Read more</a>
-    </div>
-    <div class="update-card">
-      <div class="update-card-tag">Motivation</div>
-      <h3>Motivational Session &amp; Transformation</h3>
-      <p>An inspiring transformation session conducted by Captain Yashika Hatwal Tyagi, reinforcing leadership and organisational growth.</p>
-      <a href="https://www.rvnl.org" class="read-link">Read more</a>
-    </div>
-  </div>
-
-  <!-- PARTNERSHIPS & AWARDS -->
-  <div class="two-col">
-    <div>
-      <div class="section-header" style="margin-top:0">
-        <span class="section-slash">//</span>
-        <span class="section-title">New Partnerships &amp; MOU</span>
-        <div class="section-line"></div>
-      </div>
-
-      <div class="partnership-item">
-        <h4>RVNL and Texmaco Formalise Joint Venture to Advance India's Rail Manufacturing Landscape</h4>
-        <p>In a major development for India's railway and infrastructure sector, Texmaco Rail &amp; Engineering Limited and Rail Vikas Nigam Limited have executed a Strategic Joint Venture.</p>
-        <a href="https://www.rvnl.org" class="read-link">Read more</a>
-        <div class="mou-image-block">Joint Venture Signing Ceremony — Shareholders Agreement</div>
-      </div>
-
-      <div class="partnership-item">
-        <h4>Rail Vikas Nigam Limited Receives Letter of Acceptance from Northern Railway</h4>
-        <p>RVNL has received LOA from Northern Railway for Design and Construction of New Rail Cum Road Bridge No. 11 over river Ganga, 50 Meters downstream.</p>
-        <a href="https://www.rvnl.org" class="read-link">Read more</a>
-      </div>
-
-      <div class="partnership-item">
-        <h4>RVNL Bags ₹270 Crore Central Railway Order to Build New Power System for Daund–Solapur Trains</h4>
-        <p>Rail Vikas Nigam Limited (RVNL) has received a Letter of Acceptance (LoA) from Central Railway for a contract valued at ₹270.22 crore, including applicable taxes.</p>
-        <a href="https://www.rvnl.org" class="read-link">Read more</a>
-      </div>
-
-      <div class="partnership-item">
-        <h4>RVNL Strengthens Order Book with ₹201-Crore Railway Workshop Project</h4>
-        <p>Rail Vikas Nigam Limited said it has received a Letter of Acceptance from East Coast Railway for setting up a wagon Periodical Overhauling (POH) workshop with a capacity of 200 wagons.</p>
-        <a href="https://www.rvnl.org" class="read-link">Read more</a>
-      </div>
-
-      <div class="partnership-item">
-        <h4>RVNL Bags ₹88 Crore South Eastern Railway Order for IP-Based Video Surveillance</h4>
-        <p>State-owned Rail Vikas Nigam Ltd (RVNL) announced that it has emerged as the lowest bidder (L1) for a contract from South Eastern Railway.</p>
-        <a href="https://www.rvnl.org" class="read-link">Read more</a>
-      </div>
-
-      <div class="partnership-item">
-        <h4>Rail Vikas Nigam Limited Wins Rs. 242.49 Crore OHE Upgradation Contract from South Central Railway</h4>
-        <p>Rail Vikas Nigam Limited (RVNL), a key public sector undertaking under the Ministry of Railways, has emerged as the Lowest Bidder (L1) for a significant infrastructure project.</p>
-        <a href="https://www.rvnl.org" class="read-link">Read more</a>
-      </div>
-
-      <div class="partnership-item">
-        <h4>RVNL–GPT JV Emerges L1 for ₹1,201 Crore Rail-Cum-Road Bridge Project in Varanasi</h4>
-        <p>Rail Vikas Nigam Ltd–GPT joint venture has emerged as the lowest bidder for a major infrastructure project awarded by Northern Railway.</p>
-        <a href="https://www.rvnl.org" class="read-link">Read more</a>
-      </div>
-    </div>
-
-    <div>
-      <div class="section-header" style="margin-top:0">
-        <span class="section-slash">//</span>
-        <span class="section-title">Awards &amp; Recognition</span>
-        <div class="section-line"></div>
-      </div>
-
-      <div class="award-item">
-        <h4>RVNL Awarded at PHDCCI Global Rail &amp; Metro Convention</h4>
-        <p>Rail Vikas Nigam Limited (RVNL) was honored at the 12th PHDCCI Global Rail &amp; Metro Convention held at PHD House, New Delhi.</p>
-        <div class="award-image">Award Ceremony — PHDCCI Convention</div>
-        <a href="https://www.rvnl.org" class="read-link">Read more</a>
-      </div>
-
-      <div class="award-item">
-        <h4>RVNL Wins Trailblazing Infrastructure Award for New Pamban Railway Sea Bridge</h4>
-        <p>Rail Vikas Nigam Limited (RVNL), a Navratna CPSE under the Ministry of Railways, has received the "Trailblazing Special Infrastructure Award" at the Build India Infra Awards 2026 for the landmark Pamban Bridge project.</p>
-        <div class="award-image">Pamban Bridge — Award Ceremony</div>
-        <a href="https://www.rvnl.org" class="read-link">Read more</a>
-      </div>
-
-      <div class="award-item">
-        <h4>RVNL Wins Champion of Change CSR Award at CSR Leadership Summit 2026</h4>
-        <p>Rail Vikas Nigam Limited (RVNL), a Navratna Central Public Sector Undertaking under the Ministry of Railways, has been conferred with the Champion of Change CSR Award.</p>
-        <a href="https://www.rvnl.org" class="read-link">Read more</a>
-      </div>
-
-      <div class="award-item">
-        <h4>आरआईएनएल एक बार फिर गौरवान्वित — इस्पात राजभाषा सम्मान–पहला पुरस्कार जीता</h4>
-        <p>आरआईएनएल ने वर्ष 2021-22 के लिए इस्पात मंत्रालय के इस्पात राजभाषा सम्मान प्रथम पुरस्कार जीता।</p>
-        <a href="https://www.rvnl.org" class="read-link">Read more</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- FINANCIALS -->
-  <div class="section-header">
-    <span class="section-slash">//</span>
-    <span class="section-title">Financial Updates</span>
-    <div class="section-line"></div>
-  </div>
-
-  <div class="financials-strip">
-    <div class="fin-block">
-      <div class="fin-tag">// Revenue Guidance</div>
-      <h4>RVNL Keeps FY26 Revenue Goal Intact as Project Execution Picks Up</h4>
-      <p>State-run Rail Vikas Nigam Limited (RVNL) has reaffirmed its revenue guidance of ₹20,000 to ₹22,000 crore for FY26, as project execution momentum picks up across the portfolio.</p>
-      <a href="https://www.rvnl.org" class="read-link">Read more</a>
-    </div>
-    <div class="fin-block">
-      <div class="fin-tag">// Q3 FY26 Results</div>
-      <h4>Rail Vikas Nigam Limited Reports Q3 FY26 Results</h4>
-      <p>Rail Vikas Nigam reports Q3 FY2026 net profit of <strong style="color:var(--accent2)">₹324 crore</strong>, up 4% YoY. Declares ₹1 per share interim dividend. Record date Feb 11. KRCL receivables at ₹1,169 crore.</p>
-      <a href="https://www.rvnl.org" class="read-link">Read more</a>
-    </div>
-  </div>
-
-  <!-- MEGA PROJECTS -->
-  <div class="section-header">
-    <span class="section-slash">//</span>
-    <span class="section-title">Mega Projects</span>
-    <div class="section-line"></div>
-  </div>
-
-  <div class="mega-project">
-    <div class="mega-project-header">
-      <h3>Rishikesh–Karnaprayag Rail Link Update</h3>
-      <span class="location-tag">Uttarakhand</span>
-    </div>
-    <div class="mega-project-body">
-      <p>The Rishikesh–Karnaprayag railway project is expected to be completed within the next two years. Currently, the construction on this prestigious rail project is progressing at full swing. PIU–RKSH achieved significant milestones between September 2025 and November 2025, including the handover of Tunnel-2 (6.09 km) for track works, cumulative expenditure of ₹990.21 crore, completion of 1,775.7 m of tunnel excavation, and 13,584.6 m of final lining across main and escape tunnels.<br><br><a href="https://www.rvnl.org" class="read-link">Read more</a></p>
-      <div class="mega-project-img">Rishikesh–Karnaprayag — Tunnelling Progress</div>
-    </div>
-  </div>
-
-  <div class="mega-project">
-    <div class="mega-project-header">
-      <h3>Joka–Esplanade (Purple Line) Metro Corridor</h3>
-      <span class="location-tag">Kolkata</span>
-    </div>
-    <div class="mega-project-body">
-      <p>Kolkata's Purple Line metro project has achieved a key milestone as tunnelling progressed beneath the Royal Calcutta Turf Club (RCTC), part of the iconic Kolkata Race Course, founded in 1847. The TBM DURGA was flagged off on 10.07.2025 to begin tunnelling from Khidderpore to Victoria for the Kolkata Metro, marking a major step in constructing a 1.70 km underground stretch. Equipped to handle Kolkata's challenging soil conditions, the TBM is expected to reach Victoria by May 2026.<br><br><a href="https://www.rvnl.org" class="read-link">Read more</a></p>
-      <div class="mega-project-img">Kolkata Metro — TBM DURGA Flagoff</div>
-    </div>
-  </div>
-
-  <div class="mega-project" style="margin-bottom:60px">
-    <div class="mega-project-header">
-      <h3>RVNL Brings Kazipet Coach Manufacturing Unit to Rail Network</h3>
-      <span class="location-tag">Telangana</span>
-    </div>
-    <div class="mega-project-body">
-      <p>Rail Vikas Nigam Limited, which is developing a railway manufacturing unit in 160 acres of area at Kazipet in Telangana, recently completed a successful diesel train trial run on a 13.15 km track to connect the factory to the Indian Railway network. Union Minister Shri G. Kishan Reddy reviewed the Kazipet Railway Manufacturing Unit project being executed by RVNL, expressing satisfaction over the progress, quality of works, and the project's role in strengthening indigenous railway manufacturing under the Aatmanirbhar Bharat vision.<br><br><a href="https://www.rvnl.org" class="read-link">Read more</a></p>
-      <div class="mega-project-img">Kazipet — Diesel Trial Run &amp; Manufacturing Unit</div>
-    </div>
-  </div>
-
-  <!-- TECHNOLOGY & PEOPLE -->
-  <div class="section-header">
-    <span class="section-slash">//</span>
-    <span class="section-title">Technology, Innovation &amp; People</span>
-    <div class="section-line"></div>
-  </div>
-
-  <div class="tech-split">
-    <div class="info-panel">
-      <div class="info-panel-title">Technology &amp; Innovation at RVNL</div>
-      <p>RVNL continues to integrate cutting-edge technologies across its infrastructure projects to enhance efficiency, safety, and sustainability. From advanced tunnelling techniques using <strong style="color:var(--accent2)">Tunnel Boring Machines (TBMs)</strong> to the deployment of IP-based video surveillance systems and modern traction substations, the organisation is leveraging innovation at every stage of execution.</p>
-      <p>Digital project monitoring tools, automated quality checks, and data-driven planning are enabling faster decision-making and improved project outcomes. RVNL's focus on adopting future-ready engineering solutions reinforces its commitment to delivering world-class infrastructure aligned with global standards.</p>
-      <div class="img-duo">
-        <div class="img-placeholder">Rishikesh–Karnaprayag TBM Deployment</div>
-        <div class="img-placeholder">IP-Based Video Surveillance in LHB Coaches</div>
-      </div>
-    </div>
-    <div class="info-panel">
-      <div class="info-panel-title">Building a Great Place to Work</div>
-      <p>At RVNL, people are at the core of progress. The organisation continues to foster a work culture built on transparency, collaboration, and continuous learning. Regular training programmes, leadership interactions, wellness initiatives, and employee engagement activities ensure a motivated and future-ready workforce.</p>
-      <p>Initiatives such as POSH training, health camps, and sports activities reflect RVNL's commitment to employee well-being and inclusivity. By nurturing talent and encouraging innovation, RVNL is steadily strengthening its position as a preferred workplace in the infrastructure sector.</p>
-      <div class="walk-in-box">
-        <div class="walk-in-title">Walk-in Interviews — Site Engineer (Telecom)</div>
-        <p>13th – 15th January 2026 | Venue: RVNL Corporate Office (Delhi) | Reporting Time: 10:00 AM | Project: RVNL | BharatNet</p>
-      </div>
-      <div class="img-duo" style="margin-top:12px">
-        <div class="img-placeholder">Training &amp; Leadership Session</div>
-        <div class="img-placeholder">Employee Engagement Activity</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MEDIA & NEWSROOM -->
-  <div class="section-header">
-    <span class="section-slash">//</span>
-    <span class="section-title">Media &amp; Newsroom</span>
-    <div class="section-line"></div>
-  </div>
-
-  <div class="section-desc">RVNL's growing presence in leading national publications and industry magazines highlights its role as a key driver of India's infrastructure transformation. Through strategic media outreach, project milestones, engineering achievements, and leadership insights are being showcased to a wider audience.</div>
-
-  <div class="newspaper-clips">
-    <div class="clip">Rishikesh–Karnaprayag Rail Project Feature</div>
-    <div class="clip">Shiv &amp; Shakti — National Tunnelling Milestone Feature</div>
-    <div class="clip">Sikkim Express — Breakthrough Tunnel-B Coverage</div>
-  </div>
-
-  <div class="media-grid">
-    <div class="media-item">
-      <h4>RVNL Showcases Engineering Excellence at IREE 2025</h4>
-      <p>RVNL inaugurated its stall at IREE, displaying iconic project models like the Pamban Bridge, Cable-Stayed Bridge, and Rishikesh TBM, attracting strong industry footfall and highlighting its technological capabilities in railway infrastructure.</p>
-      <a href="https://www.rvnl.org" class="read-link">Read more</a>
-    </div>
-    <div class="media-item">
-      <h4>RVNL Participates in Tunnels &amp; Bridges Conference 2025</h4>
-      <p>Mr. Mritunjay Pratap Singh, Director-Operations (RVNL) emphasized the Pamban Bridge's corrosion-resistant design and 35+ year coating lifespan, underscoring early EIAs, wildlife assessments, and minimal-impact strategies as crucial for sustainable, future-ready infrastructure.</p>
-      <a href="https://www.rvnl.org" class="read-link">Read more</a>
-    </div>
-    <div class="media-item">
-      <h4>Meet the 'Next L&amp;T': An Engineering Firm with a Rs 1 Lakh Crore Order Book</h4>
-      <p>A fast-growing engineering firm with a ₹1-lakh-crore order book is transitioning beyond rail execution, winning competitive bids and eyeing major projects like Vande Bharat, drawing comparisons with L&amp;T.</p>
-      <a href="https://www.rvnl.org" class="read-link">Read more</a>
-    </div>
-    <div class="media-item">
-      <h4>RVNL's Vision for Odisha Featured in The New Indian Express</h4>
-      <p>In his interview, Mr. Saroj Kanta Patra highlights RVNL's transformative projects in Odisha—from faster coal evacuation to rail doubling and road expansion—positioning the PSU for Maharatna status and driving India's infrastructure growth.</p>
-      <a href="https://www.rvnl.org" class="read-link">Read more</a>
-    </div>
-    <div class="media-item">
-      <h4>RVNL Wins L1 Bid for Traction Substation Project in Southern Railway</h4>
-      <p>RVNL has emerged as the Lowest Bidder for designing, supplying, erecting, testing, and commissioning 2×25kV traction substations and associated systems in the Jolarpettai–Salem section under Mission 3000MT.</p>
-      <a href="https://www.rvnl.org" class="read-link">Read more</a>
-    </div>
-    <div class="media-item">
-      <h4>RVNL Expands Beyond Rail with ₹5.35 Billion Visakhapatnam Port Authority Infrastructure Deal</h4>
-      <p>RVNL signed an MoU with Visakhapatnam Port Authority for ₹5.35 billion infrastructure projects, marking its strategic shift from rail-focused development to integrated, multimodal infrastructure in line with its 'From Rail Infra to All Infra' vision.</p>
-      <a href="https://www.rvnl.org" class="read-link">Read more</a>
-    </div>
-    <div class="media-item">
-      <h4>RVNL Secures L1 Position for Traction Substation Work in Bhopal Division</h4>
-      <p>RVNL has emerged as the Lowest Bidder for designing, modifying, supplying, erecting, testing, and commissioning 220/132kV Scott-connected traction substations and SCADA systems between Bina and RTA, awarded by West Central Railway.</p>
-      <a href="https://www.rvnl.org" class="read-link">Read more</a>
-    </div>
-    <div class="media-item">
-      <h4>Rail Vikas Nigam Limited Marks World Quality Month at Pune Metro Project</h4>
-      <p>RVNL observed World Quality Month at its Pune Metro Reach–1 Extension Project, aligning with the global theme "Quality: Think Differently." The initiative highlighted innovation, quality assurance, and best practices.</p>
-      <a href="https://www.rvnl.org" class="read-link">Read more</a>
-    </div>
-    <div class="media-item">
-      <h4>RVNL Announced the Appointment of Mukesh Kumar (ITS Officer) as Chief Vigilance Officer (CVO) Effective 1 Oct 2025</h4>
-      <p>Appointments Committee of the Cabinet has approved the appointment of Shri Mukesh Kumar, ITS (1995), as CVO in Rail Vikas Nigam Ltd. (RVNL), Delhi.</p>
-      <a href="https://www.rvnl.org" class="read-link">Read more</a>
-    </div>
-  </div>
-
-  <!-- SUSTAINABILITY -->
-  <div class="section-header">
-    <span class="section-slash">//</span>
-    <span class="section-title">Sustainability &amp; Social Initiatives</span>
-    <div class="section-line"></div>
-  </div>
-
-  <div class="sustain-cards">
-    <div class="sustain-card">
-      <div class="sustain-card-img">World Cancer Day — Health Camp at Corporate Office</div>
-      <div class="sustain-card-body">
-        <h4>Health Screenings and an Expert Talk on Cancer Prevention &amp; Early Diagnosis</h4>
-        <p>Marking World Cancer Day, RVNL conducted a Health Camp at its Corporate Office in collaboration with Medanta Hospital, Gurugram. The initiative featured health screenings and an expert talk on cancer prevention &amp; early diagnosis, strengthening awareness and preventive healthcare at the workplace.</p>
-        <a href="https://www.rvnl.org" class="read-link">Read more</a>
-      </div>
-    </div>
-    <div class="sustain-card">
-      <div class="sustain-card-img">POSH Training Programme — Corporate Office, New Delhi</div>
-      <div class="sustain-card-body">
-        <h4>RVNL Successfully Conducted an In-House POSH Training Programme</h4>
-        <p>Rail Vikas Nigam Limited successfully conducted an in-house POSH training programme on 19 Feb 2026 at Corporate Office, New Delhi. We thank Advocate Ms. Salu Sharma for an insightful session attended by over 250 officers, staff, outsourced personnel and PIUs via VC.</p>
-        <a href="https://www.rvnl.org" class="read-link">Read more</a>
-      </div>
-    </div>
-    <div class="sustain-card">
-      <div class="sustain-card-img">Badminton Tournament — Gymkhana Club, AIIMS</div>
-      <div class="sustain-card-body">
-        <h4>RVNL Organized a Badminton Tournament — Singles &amp; Doubles (Men &amp; Women)</h4>
-        <p>Rail Vikas Nigam Limited organized a Badminton Tournament – Singles &amp; Doubles (Men &amp; Women) at the Gymkhana Club, AIIMS, encouraging a culture of fitness, camaraderie and work-life balance among employees.</p>
-        <a href="https://www.rvnl.org" class="read-link">Read more</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- PIU UPDATES -->
-  <div class="section-header">
-    <span class="section-slash">//</span>
-    <span class="section-title">PIU Updates</span>
-    <div class="section-line"></div>
-  </div>
-
-  <div class="piu-list">
-    <div class="piu-item">
-      <div class="piu-stripe"></div>
-      <div>
-        <h4>Union Minister Shri G. Kishan Reddy Reviews Progress of Kazipet RMU Project Executed by RVNL</h4>
-        <p>Hon'ble Union Minister reviewed the Kazipet Railway Manufacturing Unit project being executed by RVNL, expressing satisfaction over the progress, quality of works, and the project's role in strengthening indigenous railway manufacturing under the Aatmanirbhar Bharat vision.</p>
-        <a href="https://www.rvnl.org" class="read-link">Read more</a>
-      </div>
-    </div>
-    <div class="piu-item">
-      <div class="piu-stripe"></div>
-      <div>
-        <h4>RVNL Accelerates Level Crossing Elimination on SC–MBNR Corridor</h4>
-        <p>RVNL is eliminating critical level crossings under the Secunderabad–Mahbubnagar Doubling Project through the construction of Road Under Bridges, enhancing rail safety, operational efficiency, and seamless train movement in line with Indian Railways' national safety mission.</p>
-        <a href="https://www.rvnl.org" class="read-link">Read more</a>
-      </div>
-    </div>
-    <div class="piu-item">
-      <div class="piu-stripe"></div>
-      <div>
-        <h4>Commencement of Tunneling by TBM — DURGA from Khidderpore to Victoria — Joka–Esplanade Metro Railway Corridor</h4>
-        <p>The TBM DURGA was flagged off on 10.07.2025 to begin tunneling from Khidderpore to Victoria for the Kolkata Metro, marking a major step in constructing a 1.70 km underground stretch. Equipped to handle Kolkata's challenging soil conditions, the TBM is expected to reach Victoria by May 2026.</p>
-        <a href="https://www.rvnl.org" class="read-link">Read more</a>
-      </div>
-    </div>
-    <div class="piu-item">
-      <div class="piu-stripe"></div>
-      <div>
-        <h4>RVNL Commissions Tsunduru–Peddavadlapudi Section After Successful CRS Inspection</h4>
-        <p>RVNL successfully commissioned the 32.251 km Tsunduru–Peddavadlapudi section following CRS inspection on 24–25 September 2025, with high-speed trials validating safe operations up to 110 kmph and a maximum achieved speed of 143 kmph.</p>
-        <a href="https://www.rvnl.org" class="read-link">Read more</a>
-      </div>
-    </div>
-    <div class="piu-item">
-      <div class="piu-stripe"></div>
-      <div>
-        <h4>RVNL Completes 5,000+ m Diaphragm Wall in Chennai Metro Phase II</h4>
-        <p>Rail Vikas Nigam Limited (RVNL) has achieved a major milestone in Chennai Metro Phase II – Corridor 3 with the completion of over 5,175 metres of diaphragm and slurry wall construction across Packages UG-03, UG-04, and UG-05.</p>
-        <a href="https://www.rvnl.org" class="read-link">Read more</a>
-      </div>
-    </div>
-    <div class="piu-item">
-      <div class="piu-stripe"></div>
-      <div>
-        <h4>Construction of a Six-Lane Elevated Kona Expressway</h4>
-        <p>RVNL is constructing a six-lane elevated Kona Expressway in West Bengal under EPC mode. Despite challenges, work is progressing swiftly, with NHAI and the DRB recently reviewing on-site progress and key issues.</p>
-        <a href="https://www.rvnl.org" class="read-link">Read more</a>
-      </div>
-    </div>
-    <div class="piu-item">
-      <div class="piu-stripe"></div>
-      <div>
-        <h4>Progress Update: Kavi Subhash to Sikshatirtha Metro Corridor – Last 3 Months</h4>
-        <p>Major works progressed across the Kavi Subhash–Sikshatirtha stretch, including PD buildings, architectural finishing at key stations, pile and slab completion at Nabadiganta, and steady advancement of entry structures and finishing works.</p>
-        <a href="https://www.rvnl.org" class="read-link">Read more</a>
-      </div>
-    </div>
-    <div class="piu-item">
-      <div class="piu-stripe"></div>
-      <div>
-        <h4>Progress Highlights of Rishikesh–Karnaprayag Project</h4>
-        <p>PIU–RKSH achieved significant milestones between September 2025 and November 2025, including the handover of Tunnel-2 (6.09km) for track works, cumulative expenditure of ₹990.21 crore, completion of 1,775.7m of tunnel excavation, and 13,584.6m of final lining across main and escape tunnels.</p>
-        <a href="https://www.rvnl.org" class="read-link">Read more</a>
-      </div>
-    </div>
-    <div class="piu-item">
-      <div class="piu-stripe"></div>
-      <div>
-        <h4>Progress Achievements – YTL–NED Package-IV &amp; Package-V</h4>
-        <p>Between September and November 2025, major milestones were achieved across bridges, RUBs, ROBs, and embankment works, including completion of PSC slabs, abutment caps, raft casting, and RE wall activities. Significant milestones also included commissioning of a mobile crusher for blanket work, completion of 12 km embankment top, turfing over 1 lakh sqm, girder launching at four bridges, and completion of substructure works for Viaduct 839/1 using slipform technology.</p>
-        <a href="https://www.rvnl.org" class="read-link">Read more</a>
-      </div>
-    </div>
-    <div class="piu-item">
-      <div class="piu-stripe"></div>
-      <div>
-        <h4>Quarterly Progress Highlights – Yavatmal–Nanded New BG Line Project (PKG IIIA, IIIB &amp; IIIC)</h4>
-        <p>Between September and November 2025, steady progress was achieved across multiple tunnels, including underground excavation, pipe-roof installation, rock bolting, shotcrete and invert concrete works, with key breakthroughs completed despite challenging geological conditions.</p>
-        <a href="https://www.rvnl.org" class="read-link">Read more</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- SOCIAL MEDIA -->
-  <div class="section-header">
-    <span class="section-slash">//</span>
-    <span class="section-title">Social Media Presence — March 2026</span>
-    <div class="section-line"></div>
-  </div>
-
-  <div class="social-section">
-    <div class="section-desc" style="margin-bottom:0">RVNL continues to expand its digital presence, connecting with stakeholders, industry professionals, and citizens through active social media engagement.</div>
-    <table class="social-table">
-      <thead>
-        <tr>
-          <th>Platform</th>
-          <th>Handle / Link</th>
-          <th>Followers (March 2026)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span class="social-platform">X (formerly Twitter)</span></td>
-          <td><a href="https://x.com/railvikas" target="_blank">@railvikas</a></td>
-          <td><span class="followers-num">15.3k</span></td>
-        </tr>
-        <tr>
-          <td><span class="social-platform">Facebook</span></td>
-          <td><a href="https://www.facebook.com/railvikasindia" target="_blank">@Rail Vikas Nigam Limited</a></td>
-          <td><span class="followers-num">30k</span></td>
-        </tr>
-        <tr>
-          <td><span class="social-platform">LinkedIn</span></td>
-          <td><a href="https://in.linkedin.com/company/rvnl" target="_blank">@Rail Vikas Nigam Limited</a></td>
-          <td><span class="followers-num">130k</span></td>
-        </tr>
-        <tr>
-          <td><span class="social-platform">Instagram</span></td>
-          <td><a href="https://www.instagram.com/rvnl_official/" target="_blank">@Rail Vikas Nigam Limited</a></td>
-          <td><span class="followers-num">9.5k</span></td>
-        </tr>
-        <tr>
-          <td><span class="social-platform">YouTube</span></td>
-          <td><a href="https://www.youtube.com/c/RailVikasNigamLimited" target="_blank">@Rail Vikas Nigam Limited</a></td>
-          <td><span class="followers-num">8.5k</span> Subscribers</td>
-        </tr>
-        <tr>
-          <td><span class="social-platform">WhatsApp Channel</span></td>
-          <td><a href="https://whatsapp.com/channel/0029VbBQXFY4inow1b2i5o0Y" target="_blank">@RVNL Official</a></td>
-          <td><span class="followers-num">168</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-</div><!-- /page-body -->
-
-<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
-<footer class="site-footer">
-  <div>
-    <div class="footer-logo">RVNL <span>//</span> Mirror</div>
-    <div style="font-size:0.7rem;color:var(--light-blue);margin-top:4px;letter-spacing:1px;">January – March 2026 &nbsp;|&nbsp; Issue 22</div>
-  </div>
-  <div class="footer-links">
-    <a href="https://www.rvnl.org" target="_blank">www.rvnl.org</a>
-    <a href="https://x.com/railvikas" target="_blank">Twitter</a>
-    <a href="https://www.facebook.com/railvikasindia" target="_blank">Facebook</a>
-    <a href="https://in.linkedin.com/company/rvnl" target="_blank">LinkedIn</a>
-    <a href="https://www.instagram.com/rvnl_official/" target="_blank">Instagram</a>
-    <a href="https://www.youtube.com/c/RailVikasNigamLimited" target="_blank">YouTube</a>
-    <a href="https://whatsapp.com/channel/0029VbBQXFY4inow1b2i5o0Y" target="_blank">WhatsApp</a>
-  </div>
-  <div class="footer-copy">
-    &copy; 2026 Rail Vikas Nigam Limited<br>
-    A Government of India Enterprise<br>
-    <a href="https://www.rvnl.org" target="_blank">www.rvnl.org</a>
-  </div>
-</footer>
 
 </body>
 </html>
